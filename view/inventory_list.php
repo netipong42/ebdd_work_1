@@ -42,7 +42,6 @@ try {
                 </tr>
             </thead>
             <tbody>
-
                 <?php foreach ($row as $item) :  ?>
                     <tr>
                         <td> <?php echo $item["item_no"] ?> </td>
