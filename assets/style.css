@@ -17,3 +17,6 @@ body {
   max-width: 70ch;
   margin: auto;
 }
+table {
+  font-size: 1rem;
+}

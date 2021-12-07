@@ -45,6 +45,8 @@ try {
                     <th>credit_limit</th>
                     <th>last_revised</th>
                     <th>credit_terms</th>
+                    <th>#</th>
+                    <th>#</th>
                 </tr>
             </thead>
             <tbody>
@@ -64,6 +66,12 @@ try {
                         <td> <?php echo $item["credit_limit"] ?> </td>
                         <td> <?php echo $item["last_revised"] ?> </td>
                         <td> <?php echo $item["credit_terms"] ?> </td>
+                        <td>
+                            <a href="./customers_edit.php?id=<?php echo $item['cust_no'] ?>" class="btn btn-dark">Edit</a>
+                        </td>
+                        <td>
+                            <a href="../server/customers_delete.php?id=<?php echo $item['cust_no'] ?>" class="btn btn-dark">Delete</a>
+                        </td>
                     </tr>
                 <?php endforeach  ?>
             </tbody>
