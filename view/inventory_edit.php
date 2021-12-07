@@ -30,7 +30,7 @@ try {
 <body>
     <div class="boxMain">
         <h1>Edit Inventory</h1>
-        <form action="../server/inventory_save.php" method="POST">
+        <form action="../server/inventory_update.php" method="POST">
             <!-- Item no -->
             <label for="item_no" class="form-label">Item no</label>
             <input type="text" class="form-control" name="item_no" value="<?php echo $row['item_no'] ?>">
