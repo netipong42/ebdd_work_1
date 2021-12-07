@@ -8,12 +8,28 @@ try {
         "location"      => $_POST['location'],
         "qty_on_hand"   => $_POST['qty_on_hand'],
         "reorder_pt"    => $_POST['reorder_pt'],
+        "sup_no"        => $_POST['sup_no'],
     ];
     $sql = "INSERT INTO inventory 
-    (item_no,item_name,price,location,qty_on_hand,reorder_pt) 
-    VALUES  
-    (:item_no,:item_name,:price,:location,:qty_on_hand,:reorder_pt)
-    ";
+            (item_no,
+            item_name,
+            price,
+            location,
+            qty_on_hand,
+            reorder_pt,
+            sup_no
+            ) 
+            VALUES  
+            (
+                :item_no,
+            :item_name,
+            :price,
+            :location,
+            :qty_on_hand,
+            :reorder_pt,
+            :sup_no
+            )
+            ";
     $query = $conn->prepare($sql);
     $query->execute($data);
 

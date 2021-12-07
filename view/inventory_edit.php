@@ -9,6 +9,12 @@ try {
     $query = $conn->prepare($sql);
     $query->execute($data);
     $row = $query->fetch(PDO::FETCH_ASSOC);
+
+
+    $sqlSup = "SELECT * FROM suppliers";
+    $querySup = $conn->prepare($sqlSup);
+    $querySup->execute();
+    $rowSup = $querySup->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
@@ -54,6 +60,13 @@ try {
             <!-- Item name -->
             <label for="reorder_pt" class="form-label">Reorder Point</label>
             <input type="number" class="form-control" name="reorder_pt" value="<?php echo $row['reorder_pt'] ?>">
+
+            <label for="sup_no" class="form-label">sup_no</label>
+            <select name="sup_no" id="sup_no" class="form-control">
+                <?php foreach ($rowSup as $item) : ?>
+                    <option value="<?php echo $item["sup_no"] ?>" <?php echo $row['sup_no'] == $item['sup_no'] ? "selected" : "" ?>> <?php echo $item["sup_company"] ?></option>
+                <?php endforeach  ?>
+            </select>
 
             <!-- id -->
             <input type="hidden" class="form-control" name="id" value="<?php echo $row['item_no'] ?>">

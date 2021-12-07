@@ -9,6 +9,7 @@ try {
         "location"      => $_POST['location'],
         "qty_on_hand"   => $_POST['qty_on_hand'],
         "reorder_pt"    => $_POST['reorder_pt'],
+        "sup_no"    => $_POST['sup_no'],
     ];
     $sql = "UPDATE inventory SET
         item_no = :item_no,
@@ -16,7 +17,8 @@ try {
         price = :price,
         location = :location,
         qty_on_hand = :qty_on_hand,
-        reorder_pt = :reorder_pt
+        reorder_pt = :reorder_pt,
+        sup_no = :sup_no
         WHERE item_no = :id
     ";
     $query = $conn->prepare($sql);

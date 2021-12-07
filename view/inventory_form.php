@@ -1,5 +1,11 @@
 <?php
 require_once("../server/conn.php");
+
+$sql = " SELECT * FROM suppliers";
+$query = $conn->prepare($sql);
+$query->execute();
+$row = $query->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +48,14 @@ require_once("../server/conn.php");
             <!-- Item name -->
             <label for="reorder_pt" class="form-label">Reorder Point</label>
             <input type="number" class="form-control" name="reorder_pt">
+
+
+            <label for="sup_no" class="form-label">sup_no</label>
+            <select name="sup_no" id="sup_no" class="form-control">
+                <?php foreach ($row as $item) : ?>
+                    <option value="<?php echo $item["sup_no"] ?>"> <?php echo $item["sup_company"] ?></option>
+                <?php endforeach  ?>
+            </select>
 
             <!-- btn -->
             <div class="d-grid">

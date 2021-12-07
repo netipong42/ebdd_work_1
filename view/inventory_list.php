@@ -37,6 +37,7 @@ try {
                     <th>location</th>
                     <th>qty_on_hand</th>
                     <th>reorder_pt</th>
+                    <th>sup_no</th>
                     <th>edit</th>
                     <th>delete</th>
 
@@ -51,6 +52,7 @@ try {
                         <td> <?php echo $item["location"] ?> </td>
                         <td> <?php echo $item["qty_on_hand"] ?> </td>
                         <td> <?php echo $item["reorder_pt"] ?> </td>
+                        <td> <?php echo $item["sup_no"] ?> </td>
                         <td>
                             <a href="./inventory_edit.php?id=<?php echo $item["item_no"] ?>" class="btn btn-dark">Edit</a>
                         </td>
