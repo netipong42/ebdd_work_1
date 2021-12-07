@@ -1,6 +1,6 @@
 # ebdd_work_1
-ฐานข้อมูล แก้ชื่อ
-# ไฟล์ conn.php 
+
+# ไฟล์ conn.php  ฐานข้อมูล
 ```
 $host     = "localhost";
 $user     = "student";
