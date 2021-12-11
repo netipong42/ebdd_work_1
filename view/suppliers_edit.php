@@ -3,10 +3,10 @@ require_once("../server/conn.php");
 
 try {
     $data = ['id' => $_GET['id']];
-    $slqSelect = "SELECT * FROM suppliers WHERE sub_no = :id";
+    $slqSelect = "SELECT * FROM suppliers WHERE sup_no = :id";
     $querySelect = $conn->prepare($slqSelect);
     $querySelect->execute($data);
-    $row = $querySelect->fetchAll(PDO::FETCH_ASSOC);
+    $row = $querySelect->fetch(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     echo $e->getMessage();
 }

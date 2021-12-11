@@ -6,7 +6,7 @@ try {
     $data = [
         "id" => $_GET['id']
     ];
-    $sql = "DELETE FROM suppliers WHERE sub_no = :id";
+    $sql = "DELETE FROM suppliers WHERE sup_no = :id";
     $query = $conn->prepare($sql);
     $query->execute($data);
 

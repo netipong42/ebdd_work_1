@@ -10,7 +10,6 @@ try {
     $query->execute($data);
     $row = $query->fetch(PDO::FETCH_ASSOC);
 
-
     $sqlSup = "SELECT * FROM suppliers";
     $querySup = $conn->prepare($sqlSup);
     $querySup->execute();
