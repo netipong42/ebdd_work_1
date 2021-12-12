@@ -1,9 +1,15 @@
 # WorkShop
 
-# ไฟล์ conn.php ฐานข้อมูล
+# แก้ฐานข้อมูล
 
-```php
-    ไฟล์อยู่ในโฟรเดอร์ server
+```
+ไฟล์ conn.php อยู่ในโฟรเดอร์ server
+```
+
+# sql
+
+```
+ไฟล์ sql อยู่ในโฟรเดอร์ server ชื่อ mycompany.sql
 ```
 
 ```
