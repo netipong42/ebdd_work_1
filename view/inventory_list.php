@@ -2,13 +2,17 @@
 require_once("../server/conn.php");
 
 try {
-    $slqSelect = "SELECT * FROM inventory";
+    $slqSelect = "SELECT * FROM inventory as i
+     LEFT JOIN suppliers as p
+     ON i.sup_no = p.sup_no
+     ";
     $querySelect = $conn->prepare($slqSelect);
     $querySelect->execute();
     $row = $querySelect->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +35,7 @@ try {
         <table class="table table-bordered">
             <thead>
                 <tr>
+                    <th>image</th>
                     <th>item_no </th>
                     <th>item_name</th>
                     <th>price</th>
@@ -46,15 +51,18 @@ try {
             <tbody>
                 <?php foreach ($row as $item) :  ?>
                     <tr>
+                        <td>
+                            <img src="<?php echo "data:" . $item["image_type"] . ";base64," . base64_encode($item["image_data"]) ?>" class="myImg">
+                        </td>
                         <td> <?php echo $item["item_no"] ?> </td>
                         <td> <?php echo $item["item_name"] ?> </td>
                         <td> <?php echo $item["price"] ?> </td>
                         <td> <?php echo $item["location"] ?> </td>
                         <td> <?php echo $item["qty_on_hand"] ?> </td>
                         <td> <?php echo $item["reorder_pt"] ?> </td>
-                        <td> <?php echo $item["sup_no"] ?> </td>
+                        <td> <?php echo $item["sup_company"] ?> </td>
                         <td>
-                            <a href="./inventory_edit.php?id=<?php echo $item["item_no"] ?>" class="btn btn-dark">Edit</a>
+                            <a href=" ./inventory_edit.php?id=<?php echo $item["item_no"] ?>" class="btn btn-dark">Edit</a>
                         </td>
                         <td>
                             <a href="../server/inventory_delete.php?id=<?php echo $item["item_no"] ?>" class="btn btn-dark">Delete</a>

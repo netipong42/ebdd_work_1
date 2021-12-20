@@ -20,3 +20,8 @@ body {
 table {
   font-size: 1rem;
 }
+.myImg {
+  width: 10rem;
+  display: block;
+  margin: 0 auto;
+}

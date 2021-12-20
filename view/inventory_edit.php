@@ -35,7 +35,7 @@ try {
 <body>
     <div class="boxMain">
         <h1>Edit Inventory</h1>
-        <form action="../server/inventory_update.php" method="POST">
+        <form action="../server/inventory_update.php" method="POST" enctype="multipart/form-data">
             <!-- Item no -->
             <label for="item_no" class="form-label">Item no</label>
             <input type="text" class="form-control" name="item_no" value="<?php echo $row['item_no'] ?>">
@@ -67,6 +67,12 @@ try {
                 <?php endforeach  ?>
             </select>
 
+            <!-- img -->
+            <label for="img" class="form-label">Img</label>
+            <input type="file" onChange="PreviewImage(event)" class="form-control" name="myfile" id="uploadImage">
+            <div>
+                <img src="data<?php echo ":" . $row['image_type'] ?>;base64,<?php echo base64_encode($row['image_data']) ?>" alt="" id="uploadPreview" class="myImg">
+            </div>
             <!-- id -->
             <input type="hidden" class="form-control" name="id" value="<?php echo $row['item_no'] ?>">
             <!-- btn -->
@@ -77,6 +83,22 @@ try {
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // preview
+        // function PreviewImage(event) {
+        //     var output = document.getElementById('uploadPreview');
+        //     output.src = URL.createObjectURL(event.target.files[0]);
+        // };
+
+        function PreviewImage() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById('uploadImage').files[0]);
+            oFReader.onload = function(oFREvent) {
+                var output = document.getElementById('uploadPreview');
+                output.src = oFREvent.target.result
+            }
+        }
+    </script>
 </body>
 
 </html>

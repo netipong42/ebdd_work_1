@@ -24,7 +24,7 @@ $row = $query->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <div class="boxMain">
         <h1>Add Inventory</h1>
-        <form action="../server/inventory_insert.php" method="POST">
+        <form action="../server/inventory_insert.php" method="POST" enctype="multipart/form-data">
             <!-- Item no -->
             <label for="item_no" class="form-label">Item no</label>
             <input type="text" class="form-control" name="item_no">
@@ -57,6 +57,13 @@ $row = $query->fetchAll(PDO::FETCH_ASSOC);
                 <?php endforeach  ?>
             </select>
 
+            <!-- img -->
+            <label for="img" class="form-label">Img</label>
+            <input type="file" onChange="PreviewImage(event)" class="form-control" name="myfile" id="uploadImage">
+            <div>
+                <img src="" id="uploadPreview" alt="" class="img-fluid">
+            </div>
+
             <!-- btn -->
             <div class="d-grid">
                 <input type="submit" name="insert" value="INSERT" class="btn btn-dark mt-3">
@@ -65,6 +72,22 @@ $row = $query->fetchAll(PDO::FETCH_ASSOC);
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // preview
+        // function PreviewImage(event) {
+        //     var output = document.getElementById('uploadPreview');
+        //     output.src = URL.createObjectURL(event.target.files[0]);
+        // };
+
+        function PreviewImage() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById('uploadImage').files[0]);
+            oFReader.onload = function(oFREvent) {
+                var output = document.getElementById('uploadPreview');
+                output.src = oFREvent.target.result
+            }
+        }
+    </script>
 </body>
 
 </html>
