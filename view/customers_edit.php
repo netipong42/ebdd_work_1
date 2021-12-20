@@ -26,7 +26,7 @@ $row = $query->fetch(PDO::FETCH_ASSOC);
     <div class="boxMain">
         <h1>Edit Customers</h1>
 
-        <form action="../server/customers_update.php" method="POST">
+        <form action="../server/customers_update.php" method="POST" enctype="multipart/form-data">
             <!-- cust_no -->
             <label for="item_no" class="form-label">cust_no</label>
             <input type="text" class="form-control" name="cust_no" value="<?php echo $row['cust_no'] ?>" readonly>
@@ -83,6 +83,12 @@ $row = $query->fetch(PDO::FETCH_ASSOC);
             <label for="credit_terms" class="form-label">credit_terms</label>
             <input type="text" class="form-control" name="credit_terms" value="<?php echo $row['credit_terms'] ?>">
 
+            <!-- img -->
+            <label for="img" class="form-label">img</label>
+            <input type="file" name="myfile" onChange="PreviewImage(event)" id="uploadImage" class="form-control">
+            <div>
+                <img src="<?php echo "data:" . $row["image_type"] . ";base64," . base64_encode($row["image_data"]) ?>" id="uploadPreview" alt="" class="myImg">
+            </div>
             <!-- btn -->
             <div class="d-grid">
                 <input type="submit" name="update" value="UPDATE" class="btn btn-dark mt-3">
@@ -91,6 +97,16 @@ $row = $query->fetch(PDO::FETCH_ASSOC);
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function PreviewImage() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById('uploadImage').files[0]);
+            oFReader.onload = function(oFREvent) {
+                var output = document.getElementById('uploadPreview');
+                output.src = oFREvent.target.result
+            }
+        }
+    </script>
 </body>
 
 </html>

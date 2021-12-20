@@ -24,4 +24,11 @@ table {
   width: 10rem;
   display: block;
   margin: 0 auto;
+  margin-top: 1rem;
+}
+.myImgList {
+  width: 5rem;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
 }

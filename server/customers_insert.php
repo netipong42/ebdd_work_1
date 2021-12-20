@@ -1,6 +1,9 @@
 <?php
 require_once("./conn.php");
 try {
+
+    $dataImg = file_get_contents($_FILES["myfile"]["tmp_name"]);
+
     $data = [
         "cust_no" => $_POST['cust_no'],
         "cust_name" => $_POST['cust_name'],
@@ -16,6 +19,9 @@ try {
         "credit_limit" => $_POST['credit_limit'],
         "last_revised" => $_POST['last_revised'],
         "credit_terms" => $_POST['credit_terms'],
+        'name'          => $_FILES['myfile']['name'],
+        'type'          => $_FILES['myfile']['type'],
+        'dataImg'       => $dataImg
     ];
     $sql = "INSERT INTO customers 
         (
@@ -32,7 +38,10 @@ try {
         ship_to_zip,
         credit_limit,
         last_revised,
-        credit_terms
+        credit_terms,
+        image_name,
+        image_type,
+        image_data
         ) 
         VALUES  
         (
@@ -49,7 +58,10 @@ try {
         :ship_to_zip,
         :credit_limit,
         :last_revised,
-        :credit_terms
+        :credit_terms,
+        :name,
+        :type,
+        :dataImg
         ) 
     ";
     $query = $conn->prepare($sql);

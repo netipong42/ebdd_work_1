@@ -19,7 +19,7 @@ require_once("../server/conn.php");
     <div class="boxMain">
         <h1>Add Customers</h1>
 
-        <form action="../server/customers_insert.php" method="POST">
+        <form action="../server/customers_insert.php" method="POST" enctype="multipart/form-data">
             <!-- cust_no -->
             <label for="item_no" class="form-label">cust_no</label>
             <input type="text" class="form-control" name="cust_no">
@@ -76,14 +76,30 @@ require_once("../server/conn.php");
             <label for="credit_terms" class="form-label">credit_terms</label>
             <input type="text" class="form-control" name="credit_terms">
 
+            <!-- img -->
+            <label for="img" class="form-label">img</label>
+            <input type="file" name="myfile" onChange="PreviewImage(event)" id="uploadImage" class="form-control">
+            <div>
+                <img src="" id="uploadPreview" alt="" class="myImg">
+            </div>
             <!-- btn -->
-            <div class="d-grid">
+            <div class=" d-grid">
                 <input type="submit" name="insert" value="INSERT" class="btn btn-dark mt-3">
             </div>
 
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function PreviewImage() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById('uploadImage').files[0]);
+            oFReader.onload = function(oFREvent) {
+                var output = document.getElementById('uploadPreview');
+                output.src = oFREvent.target.result
+            }
+        }
+    </script>
 </body>
 
 </html>

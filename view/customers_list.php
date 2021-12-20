@@ -31,6 +31,7 @@ try {
         <table class="table table-bordered">
             <thead>
                 <tr>
+                    <th>image</th>
                     <th>cust_no</th>
                     <th>cust_name</th>
                     <th>cust_street</th>
@@ -45,13 +46,15 @@ try {
                     <th>credit_limit</th>
                     <th>last_revised</th>
                     <th>credit_terms</th>
-                    <th>#</th>
-                    <th>#</th>
+                    <th class="text-center">#</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($row as $item) :  ?>
                     <tr>
+                        <td>
+                            <img src="<?php echo "data:" . $item["image_type"] . ";base64," . base64_encode($item["image_data"]) ?>" class="myImgList">
+                        </td>
                         <td> <?php echo $item["cust_no"] ?> </td>
                         <td> <?php echo $item["cust_name"] ?> </td>
                         <td> <?php echo $item["cust_street"] ?> </td>
@@ -67,11 +70,12 @@ try {
                         <td> <?php echo $item["last_revised"] ?> </td>
                         <td> <?php echo $item["credit_terms"] ?> </td>
                         <td>
-                            <a href="./customers_edit.php?id=<?php echo $item['cust_no'] ?>" class="btn btn-dark">Edit</a>
+                            <div class="d-flex">
+                                <a href="./customers_edit.php?id=<?php echo $item['cust_no'] ?>" class="btn btn-dark mx-1">Edit</a>
+                                <a href="../server/customers_delete.php?id=<?php echo $item['cust_no'] ?>" class="btn btn-dark mx-1">Delete</a>
+                            </div>
                         </td>
-                        <td>
-                            <a href="../server/customers_delete.php?id=<?php echo $item['cust_no'] ?>" class="btn btn-dark">Delete</a>
-                        </td>
+
                     </tr>
                 <?php endforeach  ?>
             </tbody>

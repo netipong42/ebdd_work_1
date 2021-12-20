@@ -52,7 +52,7 @@ try {
                 <?php foreach ($row as $item) :  ?>
                     <tr>
                         <td>
-                            <img src="<?php echo "data:" . $item["image_type"] . ";base64," . base64_encode($item["image_data"]) ?>" class="myImg">
+                            <img src="<?php echo "data:" . $item["image_type"] . ";base64," . base64_encode($item["image_data"]) ?>" class="myImgList">
                         </td>
                         <td> <?php echo $item["item_no"] ?> </td>
                         <td> <?php echo $item["item_name"] ?> </td>
