@@ -46,7 +46,7 @@ try {
     $query->execute($data);
 
     if ($query) {
-        Header("Location:../view/inventory_list.php");
+        Header("Location:../view/inventory/inventory_list.php");
     }
 } catch (PDOException $e) {
     echo $e->getMessage();
