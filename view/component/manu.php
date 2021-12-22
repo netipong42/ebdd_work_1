@@ -78,7 +78,7 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
-                                    inventory
+                                    Inventory
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -104,7 +104,7 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
-                                    customers
+                                    Customers
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -117,6 +117,32 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="../../view/customers/customers_form.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>add</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- menu Dropdown -->
+
+                        <!-- menu Dropdown -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    Suppliers
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../../view/suppliers/suppliers_list.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>list</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../../view/suppliers/suppliers_form.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>add</p>
                                     </a>
