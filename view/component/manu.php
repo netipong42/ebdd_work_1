@@ -76,7 +76,7 @@
                         <!-- menu Dropdown -->
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <i class="nav-icon fas fa-dolly-flatbed"></i>
                                 <p>
                                     Inventory
                                     <i class="right fas fa-angle-left"></i>
@@ -102,7 +102,7 @@
                         <!-- menu Dropdown -->
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Customers
                                     <i class="right fas fa-angle-left"></i>
@@ -128,7 +128,7 @@
                         <!-- menu Dropdown -->
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <i class="nav-icon fas fa-truck"></i>
                                 <p>
                                     Suppliers
                                     <i class="right fas fa-angle-left"></i>
@@ -152,7 +152,7 @@
                         <!-- menu Dropdown -->
 
                         <!-- หัวข้อย่อย -->
-                        <li class="nav-header">หัวข้อย่อย</li>
+                        <li class="nav-header">supmenu</li>
                         <!-- หัวข้อย่อย -->
 
                         <li class="nav-item">

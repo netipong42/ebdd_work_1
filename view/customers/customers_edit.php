@@ -87,8 +87,11 @@ $row = $query->fetch(PDO::FETCH_ASSOC);
                         <input type="text" class="form-control" name="credit_terms" value="<?php echo $row['credit_terms'] ?>">
 
                         <!-- img -->
-                        <label for="img" class="form-label">img</label>
-                        <input type="file" name="myfile" onChange="PreviewImage(event)" id="uploadImage" class="form-control">
+                        <label for="img" class="form-label">Img</label>
+                        <div class="custom-file">
+                            <input type="file" onChange="PreviewImage(event)" class="custom-file-input" name="myfile" id="uploadImage">
+                            <label class="custom-file-label" for="uploadImage">Choose file</label>
+                        </div>
                         <div>
                             <img src="<?php echo "data:" . $row["image_type"] . ";base64," . base64_encode($row["image_data"]) ?>" id="uploadPreview" alt="" class="myImg">
                         </div>
@@ -113,6 +116,9 @@ $row = $query->fetch(PDO::FETCH_ASSOC);
                 output.src = oFREvent.target.result
             }
         }
+        $(function() {
+            bsCustomFileInput.init();
+        });
     </script>
 </body>
 

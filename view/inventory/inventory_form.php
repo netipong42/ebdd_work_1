@@ -96,6 +96,10 @@ $row = $query->fetchAll(PDO::FETCH_ASSOC);
                 output.src = oFREvent.target.result
             }
         }
+
+        $(function() {
+            bsCustomFileInput.init();
+        });
     </script>
 </body>
 

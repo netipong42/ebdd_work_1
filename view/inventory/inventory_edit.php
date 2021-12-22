@@ -110,6 +110,9 @@ try {
                 output.src = oFREvent.target.result
             }
         }
+        $(function() {
+            bsCustomFileInput.init();
+        });
     </script>
 </body>
 

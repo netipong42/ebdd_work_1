@@ -26,7 +26,7 @@ try {
     <div class="row">
         <div class="card">
             <div class="card-header">
-                <h1>Customers</h1>
+                <h1>List Customers</h1>
                 <a href="./customers_form.php" class="btn btn-success my-3">Add</a>
             </div>
             <div class="card-body">
