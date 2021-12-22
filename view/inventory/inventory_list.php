@@ -3,9 +3,9 @@ require_once("../../server/conn.php");
 
 try {
     $slqSelect = "SELECT * FROM inventory as i
-     LEFT JOIN suppliers as p
-     ON i.sup_no = p.sup_no
-     ";
+		 LEFT JOIN suppliers as p
+		 ON i.sup_no = p.sup_no
+		 ";
     $querySelect = $conn->prepare($slqSelect);
     $querySelect->execute();
     $row = $querySelect->fetchAll(PDO::FETCH_ASSOC);
@@ -26,6 +26,7 @@ try {
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <?php require("../component/manu.php") ?>
+
     <!-- เนื้อหา -->
     <div class="card">
         <div class="card-header">
