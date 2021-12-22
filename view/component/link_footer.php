@@ -64,3 +64,8 @@
     <script src="../../assets/theme/plugins/sweetalert2/sweetalert2.all.min.js"></script>
     <!-- bs-custom-file-input -->
     <script src="../../assets/theme/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <script>
+        $(function() {
+            bsCustomFileInput.init();
+        });
+    </script>
