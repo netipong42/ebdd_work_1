@@ -82,7 +82,7 @@ try {
         $query->execute($data);
     }
     if ($query) {
-        Header("Location:../view/customers_list.php");
+        Header("Location:../view/customers/customers_list.php");
     }
 } catch (PDOException $e) {
     echo $e->getMessage();
