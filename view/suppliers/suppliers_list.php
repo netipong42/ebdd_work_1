@@ -54,7 +54,7 @@ try {
                                     <a href="./suppliers_edit.php?id=<?php echo $item["sup_no"] ?>" class="btn btn-warning">Edit</a>
                                 </td>
                                 <td>
-                                    <a href="../../server/suppliers_delete.php?id=<?php echo $item["sup_no"] ?>" class="btn btn-danger">Delete</a>
+                                    <a href="../../server/suppliers/suppliers_delete.php?id=<?php echo $item["sup_no"] ?>" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                         <?php endforeach  ?>

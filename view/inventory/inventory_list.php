@@ -68,7 +68,7 @@ try {
                                 <a href=" ./inventory_edit.php?id=<?php echo $item["item_no"] ?>" class="btn btn-warning">Edit</a>
                             </td>
                             <td>
-                                <a href="../../server/inventory_delete.php?id=<?php echo $item["item_no"] ?>" class="btn btn-danger">Delete</a>
+                                <a href="../../server/inventory/inventory_delete.php?id=<?php echo $item["item_no"] ?>" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach  ?>

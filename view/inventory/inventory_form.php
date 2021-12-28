@@ -27,7 +27,7 @@ $row = $query->fetchAll(PDO::FETCH_ASSOC);
                     <h1>Add Inventory</h1>
                 </div>
                 <div class="card-body">
-                    <form action="../../server/inventory_insert.php" method="POST" enctype="multipart/form-data">
+                    <form action="../../server/inventory/inventory_insert.php" method="POST" enctype="multipart/form-data">
                         <!-- Item no -->
                         <label for="item_no" class="form-label">Item no</label>
                         <input type="text" class="form-control" name="item_no">

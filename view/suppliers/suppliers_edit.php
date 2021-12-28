@@ -31,7 +31,7 @@ try {
                     <h1>Edit Suppliers</h1>
                 </div>
                 <div class="card-body">
-                    <form action="../../server/suppliers_update.php" method="POST">
+                    <form action="../../server/suppliers/suppliers_update.php" method="POST">
                         <label for="sup_no" class="form-label">sup_no</label>
                         <input type="text" class="form-control" name="sup_no" value="<?php echo $row['sup_no'] ?>" readonly>
 

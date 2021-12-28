@@ -29,7 +29,7 @@ $row = $query->fetch(PDO::FETCH_ASSOC);
                 </div>
                 <div class="card-body">
 
-                    <form action="../../server/customers_update.php" method="POST" enctype="multipart/form-data">
+                    <form action="../../server/customers/customers_update.php" method="POST" enctype="multipart/form-data">
                         <!-- cust_no -->
                         <label for="item_no" class="form-label">cust_no</label>
                         <input type="text" class="form-control" name="cust_no" value="<?php echo $row['cust_no'] ?>" readonly>

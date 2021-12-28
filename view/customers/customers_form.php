@@ -18,7 +18,7 @@
                     <h1>Add customers</h1>
                 </div>
                 <div class="card-body">
-                    <form action="../../server/customers_insert.php" method="POST" enctype="multipart/form-data">
+                    <form action="../../server/customers/customers_insert.php" method="POST" enctype="multipart/form-data">
                         <!-- cust_no -->
                         <label for="item_no" class="form-label">cust_no</label>
                         <input type="text" class="form-control" name="cust_no">

@@ -74,7 +74,7 @@ try {
                                 <td>
                                     <div class="d-flex">
                                         <a href="./customers_edit.php?id=<?php echo $item['cust_no'] ?>" class="btn btn-warning mx-1">Edit</a>
-                                        <a href="../../server/customers_delete.php?id=<?php echo $item['cust_no'] ?>" class="btn btn-danger mx-1">Delete</a>
+                                        <a href="../../server/customers/customers_delete.php?id=<?php echo $item['cust_no'] ?>" class="btn btn-danger mx-1">Delete</a>
                                     </div>
                                 </td>
 

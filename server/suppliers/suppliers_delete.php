@@ -1,6 +1,6 @@
 <?php
 
-require_once("./conn.php");
+require_once("../conn.php");
 
 try {
     $data = [
@@ -11,7 +11,7 @@ try {
     $query->execute($data);
 
     if ($query) {
-        Header("Location:../view/suppliers/suppliers_list.php");
+        Header("Location:../../view/suppliers/suppliers_list.php");
     }
 } catch (PDOException $e) {
     echo $e->getMessage();

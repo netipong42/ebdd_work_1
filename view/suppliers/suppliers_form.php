@@ -18,7 +18,7 @@
                     <h1>Add Suppliers</h1>
                 </div>
                 <div class="card-body">
-                    <form action="../../server/suppliers_insert.php" method="POST">
+                    <form action="../../server/suppliers/suppliers_insert.php" method="POST">
                         <label for="sup_no" class="form-label">sup_no</label>
                         <input type="text" class="form-control" name="sup_no">
 

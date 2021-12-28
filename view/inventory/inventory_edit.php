@@ -36,7 +36,7 @@ try {
                 <div class="card-header">
                     <h3>Edit Inventory</h3>
                 </div>
-                <form action="../../server/inventory_update.php" method="POST" enctype="multipart/form-data">
+                <form action="../../server/inventory/inventory_update.php" method="POST" enctype="multipart/form-data">
                     <div class="card-body">
                         <!-- Item no -->
                         <label for="item_no" class="form-label">Item no</label>

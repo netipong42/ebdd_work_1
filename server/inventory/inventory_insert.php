@@ -1,5 +1,5 @@
 <?php
-require_once("./conn.php");
+require_once("../conn.php");
 try {
 
     $dataImg = file_get_contents($_FILES["myfile"]["tmp_name"]);
@@ -46,7 +46,7 @@ try {
     $query->execute($data);
 
     if ($query) {
-        Header("Location:../view/inventory/inventory_list.php");
+        Header("Location:../../view/inventory/inventory_list.php");
     }
 } catch (PDOException $e) {
     echo $e->getMessage();
