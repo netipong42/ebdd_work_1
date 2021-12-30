@@ -68,7 +68,7 @@
                 <nav class="mt-2" aria-label="">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="../../view/main/" class="nav-link">
                                 <em class="nav-icon fas fa-th"></em>
                                 <p>Home</p>
                             </a>
