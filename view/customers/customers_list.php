@@ -74,7 +74,7 @@ try {
                                 <td>
                                     <div class="d-flex">
                                         <a href="./customers_edit.php?id=<?php echo $item['cust_no'] ?>" class="btn btn-warning mx-1">Edit</a>
-                                        <a href="../../server/customers/customers_delete.php?id=<?php echo $item['cust_no'] ?>" class="btn btn-danger mx-1">Delete</a>
+                                        <a onClick="confirmAlert('<?php echo $item["cust_no"] ?>')" class="btn btn-danger mx-1">Delete</a>
                                     </div>
                                 </td>
 
@@ -99,6 +99,23 @@ try {
                 "responsive": true,
             });
         });
+
+        function confirmAlert(id) {
+            Swal.fire({
+                icon: `warning`,
+                title: `ยืนยันการลบ`,
+                text: `ต้องการลบข้อมูลหรือไม่`,
+                showCancelButton: true,
+                cancelButtonText: `ยกเลิก`,
+                cancelButtonColor: `#E74A3B`,
+                confirmButtonText: `ตกลง`,
+                confirmButtonColor: `#1CC88A`,
+            }).then((res) => {
+                if (res.isConfirmed) {
+                    location.assign(`../../server/customers/customers_delete.php?id=${id}`);
+                }
+            })
+        }
     </script>
 </body>
 

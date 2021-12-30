@@ -23,6 +23,6 @@
   <link rel="stylesheet" href="../../assets/theme/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../assets/theme/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Alert -->
-  <link rel="stylesheet" href="../../assets/theme/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- Mystyle -->
   <link rel="stylesheet" href="../../assets/style/style.css">

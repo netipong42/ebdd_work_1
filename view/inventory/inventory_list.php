@@ -68,7 +68,7 @@ try {
                                 <a href=" ./inventory_edit.php?id=<?php echo $item["item_no"] ?>" class="btn btn-warning">Edit</a>
                             </td>
                             <td>
-                                <a href="../../server/inventory/inventory_delete.php?id=<?php echo $item["item_no"] ?>" class="btn btn-danger">Delete</a>
+                                <a onClick="confirmAlert('<?php echo $item["item_no"] ?>')" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach  ?>
@@ -90,6 +90,23 @@ try {
                 "responsive": true,
             });
         });
+
+        function confirmAlert(id) {
+            Swal.fire({
+                icon: `warning`,
+                title: `ยืนยันการลบ`,
+                text: `ต้องการลบข้อมูลหรือไม่`,
+                showCancelButton: true,
+                cancelButtonText: `ยกเลิก`,
+                cancelButtonColor: `#E74A3B`,
+                confirmButtonText: `ตกลง`,
+                confirmButtonColor: `#1CC88A`,
+            }).then((res) => {
+                if (res.isConfirmed) {
+                    location.assign(`../../server/inventory/inventory_delete.php?id=${id}`);
+                }
+            })
+        }
     </script>
 </body>
 
