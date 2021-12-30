@@ -79,7 +79,7 @@ try {
                             <img src="data<?php echo ":" . $row['image_type'] ?>;base64,<?php echo base64_encode($row['image_data']) ?>" alt="" id="uploadPreview" class="myImg">
                         </div>
                         <!-- id -->
-                        <input type="hidden" class="form-control" name="id" value="<?php echo $row['item_no'] ?>">
+                        <input type="hidden" class="form-control" name="id" value="<?php echo $row['user_no'] ?>">
 
                     </div>
                     <div class="card-footer">
