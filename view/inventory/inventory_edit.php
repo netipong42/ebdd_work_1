@@ -40,30 +40,30 @@ try {
                     <div class="card-body">
                         <!-- Item no -->
                         <label for="item_no" class="form-label">Item no</label>
-                        <input type="text" class="form-control" name="item_no" value="<?php echo $row['item_no'] ?>">
+                        <input type="text" class="form-control" name="item_no" value="<?php echo $row['item_no'] ?>" required>
 
                         <!-- Item name -->
                         <label for="item_name" class="form-label">Item name</label>
-                        <input type="text" class="form-control" name="item_name" value="<?php echo $row['item_name'] ?>">
+                        <input type="text" class="form-control" name="item_name" value="<?php echo $row['item_name'] ?>" required>
 
                         <!-- Price -->
                         <label for="price" class="form-label">Price</label>
-                        <input type="number" class="form-control" name="price" value="<?php echo $row['price'] ?>">
+                        <input type="number" class="form-control" name="price" value="<?php echo $row['price'] ?>" required>
 
                         <!-- Location -->
                         <label for="location" class="form-label">Location</label>
-                        <input type="text" class="form-control" name="location" value="<?php echo $row['location'] ?>">
+                        <input type="text" class="form-control" name="location" value="<?php echo $row['location'] ?>" required>
 
                         <!-- Item name -->
                         <label for="qty_on_hand" class="form-label">Quantity on hand</label>
-                        <input type="number" class="form-control" name="qty_on_hand" value="<?php echo $row['qty_on_hand'] ?>">
+                        <input type="number" class="form-control" name="qty_on_hand" value="<?php echo $row['qty_on_hand'] ?>" required>
 
                         <!-- Item name -->
                         <label for="reorder_pt" class="form-label">Reorder Point</label>
-                        <input type="number" class="form-control" name="reorder_pt" value="<?php echo $row['reorder_pt'] ?>">
+                        <input type="number" class="form-control" name="reorder_pt" value="<?php echo $row['reorder_pt'] ?>" required>
 
                         <label for="sup_no" class="form-label">sup_no</label>
-                        <select name="sup_no" id="sup_no" class="form-control">
+                        <select name="sup_no" id="sup_no" class="form-control" required>
                             <?php foreach ($rowSup as $item) : ?>
                                 <option value="<?php echo $item["sup_no"] ?>" <?php echo $row['sup_no'] == $item['sup_no'] ? "selected" : "" ?>> <?php echo $item["sup_company"] ?></option>
                             <?php endforeach  ?>

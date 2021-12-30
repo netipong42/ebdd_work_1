@@ -20,19 +20,19 @@
                 <div class="card-body">
                     <form action="../../server/suppliers/suppliers_insert.php" method="POST">
                         <label for="sup_no" class="form-label">sup_no</label>
-                        <input type="text" class="form-control" name="sup_no">
+                        <input type="text" class="form-control" name="sup_no" required>
 
                         <label for="sup_company" class="form-label">sup_company</label>
-                        <input type="text" class="form-control" name="sup_company">
+                        <input type="text" class="form-control" name="sup_company" required>
 
                         <label for="sup_contact" class="form-label">sup_contact</label>
-                        <input type="number" class="form-control" name="sup_contact">
+                        <input type="number" class="form-control" name="sup_contact" required>
 
                         <label for="sup_telephone" class="form-label">sup_telephone</label>
-                        <input type="text" class="form-control" name="sup_telephone">
+                        <input type="text" class="form-control" name="sup_telephone" required>
 
                         <label for="sup_email" class="form-label">sup_email</label>
-                        <input type="number" class="form-control" name="sup_email">
+                        <input type="number" class="form-control" name="sup_email" required>
 
                         <div class="d-grid">
                             <input type="submit" name="insert" value="INSERT" class="btn btn-dark btn-block mt-3">

@@ -36,16 +36,16 @@ try {
                         <input type="text" class="form-control" name="sup_no" value="<?php echo $row['sup_no'] ?>" readonly>
 
                         <label for="sup_company" class="form-label">sup_company</label>
-                        <input type="text" class="form-control" name="sup_company" value="<?php echo $row['sup_company'] ?>">
+                        <input type="text" class="form-control" name="sup_company" value="<?php echo $row['sup_company'] ?>" required>
 
                         <label for="sup_contact" class="form-label">sup_contact</label>
-                        <input type="number" class="form-control" name="sup_contact" value="<?php echo $row['sup_contact'] ?>">
+                        <input type="number" class="form-control" name="sup_contact" value="<?php echo $row['sup_contact'] ?>" required>
 
                         <label for="sup_telephone" class="form-label">sup_telephone</label>
-                        <input type="text" class="form-control" name="sup_telephone" value="<?php echo $row['sup_telephone'] ?>">
+                        <input type="text" class="form-control" name="sup_telephone" value="<?php echo $row['sup_telephone'] ?>" required>
 
                         <label for="sup_email" class="form-label">sup_email</label>
-                        <input type="number" class="form-control" name="sup_email" value="<?php echo $row['sup_email'] ?>">
+                        <input type="number" class="form-control" name="sup_email" value="<?php echo $row['sup_email'] ?>" required>
 
                         <div class="d-grid">
                             <input type="submit" name="insert" value="UPDATE" class="btn btn-dark btn-block mt-3">

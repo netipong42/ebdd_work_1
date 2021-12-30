@@ -36,55 +36,55 @@ $row = $query->fetch(PDO::FETCH_ASSOC);
 
                         <!-- cust_name -->
                         <label for="item_name" class="form-label">cust_name</label>
-                        <input type="text" class="form-control" name="cust_name" value="<?php echo $row['cust_name'] ?>">
+                        <input type="text" class="form-control" name="cust_name" value="<?php echo $row['cust_name'] ?>" required>
 
                         <!--  cust_street -->
                         <label for=" cust_street" class="form-label"> cust_street</label>
-                        <input type="text" class="form-control" name=" cust_street" value="<?php echo $row['cust_street'] ?>">
+                        <input type="text" class="form-control" name=" cust_street" value="<?php echo $row['cust_street'] ?>" required>
 
                         <!-- cust_city -->
                         <label for="cust_city" class="form-label">cust_city</label>
-                        <input type="text" class="form-control" name="cust_city" value="<?php echo $row['cust_city'] ?>">
+                        <input type="text" class="form-control" name="cust_city" value="<?php echo $row['cust_city'] ?>" required>
 
                         <!-- cust_state -->
                         <label for="cust_state" class="form-label">cust_state</label>
-                        <input type="text" class="form-control" name="cust_state" value="<?php echo $row['cust_state'] ?>">
+                        <input type="text" class="form-control" name="cust_state" value="<?php echo $row['cust_state'] ?>" required>
 
                         <!-- cust_zip -->
                         <label for="cust_zip" class="form-label">cust_zip</label>
-                        <input type="text" class="form-control" name="cust_zip" value="<?php echo $row['cust_zip'] ?>">
+                        <input type="text" class="form-control" name="cust_zip" value="<?php echo $row['cust_zip'] ?>" required>
 
                         <!-- ship_to_name -->
                         <label for="ship_to_name" class="form-label">ship_to_name</label>
-                        <input type="text" class="form-control" name="ship_to_name" value="<?php echo $row['ship_to_name'] ?>">
+                        <input type="text" class="form-control" name="ship_to_name" value="<?php echo $row['ship_to_name'] ?>" required>
 
                         <!-- ship_to_street -->
                         <label for="ship_to_street" class="form-label">ship_to_street</label>
-                        <input type="text" class="form-control" name="ship_to_street" value="<?php echo $row['ship_to_street'] ?>">
+                        <input type="text" class="form-control" name="ship_to_street" value="<?php echo $row['ship_to_street'] ?>" required>
 
                         <!-- ship_to_city -->
                         <label for="ship_to_city" class="form-label">ship_to_city</label>
-                        <input type="text" class="form-control" name="ship_to_city" value="<?php echo $row['ship_to_city'] ?>">
+                        <input type="text" class="form-control" name="ship_to_city" value="<?php echo $row['ship_to_city'] ?>" required>
 
                         <!-- ship_to_state -->
                         <label for="ship_to_state" class="form-label">ship_to_state</label>
-                        <input type="text" class="form-control" name="ship_to_state" value="<?php echo $row['ship_to_state'] ?>">
+                        <input type="text" class="form-control" name="ship_to_state" value="<?php echo $row['ship_to_state'] ?>" required>
 
                         <!-- ship_to_zip -->
                         <label for="ship_to_zip" class="form-label">ship_to_zip</label>
-                        <input type="text" class="form-control" name="ship_to_zip" value="<?php echo $row['ship_to_zip'] ?>">
+                        <input type="text" class="form-control" name="ship_to_zip" value="<?php echo $row['ship_to_zip'] ?>" required>
 
                         <!-- credit_limit -->
                         <label for="credit_limit" class="form-label">credit_limit</label>
-                        <input type="number" class="form-control" name="credit_limit" value="<?php echo $row['credit_limit'] ?>">
+                        <input type="number" class="form-control" name="credit_limit" value="<?php echo $row['credit_limit'] ?>" required>
 
                         <!-- last_revised -->
                         <label for="last_revised" class="form-label">last_revised</label>
-                        <input type="date" class="form-control" name="last_revised" value="<?php echo $row['last_revised'] ?>">
+                        <input type="date" class="form-control" name="last_revised" value="<?php echo $row['last_revised'] ?>" required>
 
                         <!-- credit_terms -->
                         <label for="credit_terms" class="form-label">credit_terms</label>
-                        <input type="text" class="form-control" name="credit_terms" value="<?php echo $row['credit_terms'] ?>">
+                        <input type="text" class="form-control" name="credit_terms" value="<?php echo $row['credit_terms'] ?>" required>
 
                         <!-- img -->
                         <label for="img" class="form-label">Img</label>
