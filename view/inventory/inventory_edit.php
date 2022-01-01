@@ -38,49 +38,71 @@ try {
                 </div>
                 <form action="../../server/inventory/inventory_update.php" method="POST" enctype="multipart/form-data">
                     <div class="card-body">
-                        <!-- Item no -->
-                        <label for="item_no" class="form-label">Item no</label>
-                        <input type="text" class="form-control" name="item_no" value="<?php echo $row['item_no'] ?>" required>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="item_no" class="form-label">Item no</label>
+                                    <input type="text" class="form-control" name="item_no" value="<?php echo $row['item_no'] ?>" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="item_name" class="form-label">Item name</label>
+                                    <input type="text" class="form-control" name="item_name" value="<?php echo $row['item_name'] ?>" required>
+                                </div>
+                            </div>
+                        </div>
 
-                        <!-- Item name -->
-                        <label for="item_name" class="form-label">Item name</label>
-                        <input type="text" class="form-control" name="item_name" value="<?php echo $row['item_name'] ?>" required>
+                        <div class="form-group">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" class="form-control" name="price" value="<?php echo $row['price'] ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" name="location" value="<?php echo $row['location'] ?>" required>
+                        </div>
 
-                        <!-- Price -->
-                        <label for="price" class="form-label">Price</label>
-                        <input type="number" class="form-control" name="price" value="<?php echo $row['price'] ?>" required>
 
-                        <!-- Location -->
-                        <label for="location" class="form-label">Location</label>
-                        <input type="text" class="form-control" name="location" value="<?php echo $row['location'] ?>" required>
-
-                        <!-- Item name -->
-                        <label for="qty_on_hand" class="form-label">Quantity on hand</label>
-                        <input type="number" class="form-control" name="qty_on_hand" value="<?php echo $row['qty_on_hand'] ?>" required>
-
-                        <!-- Item name -->
-                        <label for="reorder_pt" class="form-label">Reorder Point</label>
-                        <input type="number" class="form-control" name="reorder_pt" value="<?php echo $row['reorder_pt'] ?>" required>
-
-                        <label for="sup_no" class="form-label">sup_no</label>
-                        <select name="sup_no" id="sup_no" class="form-control" required>
-                            <?php foreach ($rowSup as $item) : ?>
-                                <option value="<?php echo $item["sup_no"] ?>" <?php echo $row['sup_no'] == $item['sup_no'] ? "selected" : "" ?>> <?php echo $item["sup_company"] ?></option>
-                            <?php endforeach  ?>
-                        </select>
-
-                        <!-- img -->
-                        <label for="img" class="form-label">Img</label>
-                        <div class="custom-file">
-                            <input type="file" onChange="PreviewImage(event)" class="custom-file-input" name="myfile" id="uploadImage">
-                            <label class="custom-file-label" for="uploadImage">Choose file</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="qty_on_hand" class="form-label">Quantity on hand</label>
+                                    <input type="number" class="form-control" name="qty_on_hand" value="<?php echo $row['qty_on_hand'] ?>" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="reorder_pt" class="form-label">Reorder Point</label>
+                                    <input type="number" class="form-control" name="reorder_pt" value="<?php echo $row['reorder_pt'] ?>" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sup_no" class="form-label">sup_no</label>
+                                    <select name="sup_no" id="sup_no" class="form-control" required>
+                                        <?php foreach ($rowSup as $item) : ?>
+                                            <option value="<?php echo $item["sup_no"] ?>" <?php echo $row['sup_no'] == $item['sup_no'] ? "selected" : "" ?>> <?php echo $item["sup_company"] ?></option>
+                                        <?php endforeach  ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="img" class="form-label">Img</label>
+                                    <div class="custom-file">
+                                        <input type="file" onChange="PreviewImage(event)" class="custom-file-input" name="myfile" id="uploadImage">
+                                        <label class="custom-file-label" for="uploadImage">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div>
                             <img src="data<?php echo ":" . $row['image_type'] ?>;base64,<?php echo base64_encode($row['image_data']) ?>" alt="" id="uploadPreview" class="myImg">
                         </div>
                         <!-- id -->
                         <input type="hidden" class="form-control" name="id" value="<?php echo $row['item_no'] ?>">
-
                     </div>
                     <div class="card-footer">
                         <!-- btn -->

@@ -19,67 +19,105 @@
                 </div>
                 <div class="card-body">
                     <form action="../../server/customers/customers_insert.php" method="POST" enctype="multipart/form-data">
-                        <!-- cust_no -->
-                        <label for="item_no" class="form-label">cust_no</label>
-                        <input type="text" class="form-control" name="cust_no" required>
-
-                        <!-- cust_name -->
-                        <label for="item_name" class="form-label">cust_name</label>
-                        <input type="text" class="form-control" name="cust_name" required>
-
-                        <!--  cust_street -->
-                        <label for=" cust_street" class="form-label"> cust_street</label>
-                        <input type="text" class="form-control" name=" cust_street" required>
-
-                        <!-- cust_city -->
-                        <label for="cust_city" class="form-label">cust_city</label>
-                        <input type="text" class="form-control" name="cust_city" required>
-
-                        <!-- cust_state -->
-                        <label for="cust_state" class="form-label">cust_state</label>
-                        <input type="text" class="form-control" name="cust_state" required>
-
-                        <!-- cust_zip -->
-                        <label for="cust_zip" class="form-label">cust_zip</label>
-                        <input type="text" class="form-control" name="cust_zip" required>
-
-                        <!-- ship_to_name -->
-                        <label for="ship_to_name" class="form-label">ship_to_name</label>
-                        <input type="text" class="form-control" name="ship_to_name" required>
-
-                        <!-- ship_to_street -->
-                        <label for="ship_to_street" class="form-label">ship_to_street</label>
-                        <input type="text" class="form-control" name="ship_to_street" required>
-
-                        <!-- ship_to_city -->
-                        <label for="ship_to_city" class="form-label">ship_to_city</label>
-                        <input type="text" class="form-control" name="ship_to_city" required>
-
-                        <!-- ship_to_state -->
-                        <label for="ship_to_state" class="form-label">ship_to_state</label>
-                        <input type="text" class="form-control" name="ship_to_state" required>
-
-                        <!-- ship_to_zip -->
-                        <label for="ship_to_zip" class="form-label">ship_to_zip</label>
-                        <input type="text" class="form-control" name="ship_to_zip" required>
-
-                        <!-- credit_limit -->
-                        <label for="credit_limit" class="form-label">credit_limit</label>
-                        <input type="number" class="form-control" name="credit_limit" required>
-
-                        <!-- last_revised -->
-                        <label for="last_revised" class="form-label">last_revised</label>
-                        <input type="date" class="form-control" name="last_revised" required>
-
-                        <!-- credit_terms -->
-                        <label for="credit_terms" class="form-label">credit_terms</label>
-                        <input type="text" class="form-control" name="credit_terms" required>
-
-                        <!-- img -->
-                        <label for="img" class="form-label">Img</label>
-                        <div class="custom-file">
-                            <input type="file" onChange="PreviewImage(event)" class="custom-file-input" name="myfile" id="uploadImage" required>
-                            <label class="custom-file-label" for="uploadImage">Choose file</label>
+                        <div class="form-group">
+                            <label for="item_no" class="form-label">cust_no</label>
+                            <input type="text" class="form-control" name="cust_no" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="item_name" class="form-label">cust_name</label>
+                                    <input type="text" class="form-control" name="cust_name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for=" cust_street" class="form-label"> cust_street</label>
+                                    <input type="text" class="form-control" name=" cust_street" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="cust_city" class="form-label">cust_city</label>
+                                    <input type="text" class="form-control" name="cust_city" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="cust_state" class="form-label">cust_state</label>
+                                    <input type="text" class="form-control" name="cust_state" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="cust_zip" class="form-label">cust_zip</label>
+                                    <input type="text" class="form-control" name="cust_zip" required>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="ship_to_name" class="form-label">ship_to_name</label>
+                                    <input type="text" class="form-control" name="ship_to_name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="ship_to_street" class="form-label">ship_to_street</label>
+                                    <input type="text" class="form-control" name="ship_to_street" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="ship_to_city" class="form-label">ship_to_city</label>
+                                    <input type="text" class="form-control" name="ship_to_city" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="ship_to_state" class="form-label">ship_to_state</label>
+                                    <input type="text" class="form-control" name="ship_to_state" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="ship_to_zip" class="form-label">ship_to_zip</label>
+                                    <input type="text" class="form-control" name="ship_to_zip" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="credit_limit" class="form-label">credit_limit</label>
+                                    <input type="number" class="form-control" name="credit_limit" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="last_revised" class="form-label">last_revised</label>
+                                    <input type="date" class="form-control" name="last_revised" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="credit_terms" class="form-label">credit_terms</label>
+                                    <input type="text" class="form-control" name="credit_terms" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="img" class="form-label">Img</label>
+                            <div class="custom-file">
+                                <input type="file" onChange="PreviewImage(event)" class="custom-file-input" name="myfile" id="uploadImage" required>
+                                <label class="custom-file-label" for="uploadImage">Choose file</label>
+                            </div>
                         </div>
                         <div>
                             <img src="" id="uploadPreview" alt="" class="myImg">

@@ -28,42 +28,64 @@ $row = $query->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="card-body">
                     <form action="../../server/inventory/inventory_insert.php" method="POST" enctype="multipart/form-data">
-                        <!-- Item no -->
-                        <label for="item_no" class="form-label">Item no</label>
-                        <input type="text" class="form-control" name="item_no" required>
 
-                        <!-- Item name -->
-                        <label for="item_name" class="form-label">Item name</label>
-                        <input type="text" class="form-control" name="item_name" required>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="item_no" class="form-label">Item no</label>
+                                    <input type="text" class="form-control" name="item_no" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="item_name" class="form-label">Item name</label>
+                                    <input type="text" class="form-control" name="item_name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" class="form-control" name="price" required>
+                        </div>
 
-                        <!-- Price -->
-                        <label for="price" class="form-label">Price</label>
-                        <input type="number" class="form-control" name="price" required>
-
-                        <!-- Location -->
-                        <label for="location" class="form-label">Location</label>
-                        <input type="text" class="form-control" name="location" required>
-
-                        <!-- Item name -->
-                        <label for="qty_on_hand" class="form-label">Quantity on hand</label>
-                        <input type="number" class="form-control" name="qty_on_hand" required>
-
-                        <!-- Item name -->
-                        <label for="reorder_pt" class="form-label">Reorder Point</label>
-                        <input type="number" class="form-control" name="reorder_pt" required>
-
-                        <label for="sup_no" class="form-label">sup_no</label>
-                        <select name="sup_no" id="sup_no" class="form-control" required>
-                            <?php foreach ($row as $item) : ?>
-                                <option value="<?php echo $item["sup_no"] ?>"> <?php echo $item["sup_company"] ?></option>
-                            <?php endforeach  ?>
-                        </select>
-
-                        <!-- img -->
-                        <label for="img" class="form-label">Img</label>
-                        <div class="custom-file">
-                            <input type="file" onChange="PreviewImage(event)" class="custom-file-input" name="myfile" id="uploadImage" required>
-                            <label class="custom-file-label" for="uploadImage">Choose file</label>
+                        <div class="form-group">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" name="location" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="qty_on_hand" class="form-label">Quantity on hand</label>
+                                    <input type="number" class="form-control" name="qty_on_hand" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="reorder_pt" class="form-label">Reorder Point</label>
+                                    <input type="number" class="form-control" name="reorder_pt" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sup_no" class="form-label">sup_no</label>
+                                    <select name="sup_no" id="sup_no" class="form-control" required>
+                                        <?php foreach ($row as $item) : ?>
+                                            <option value="<?php echo $item["sup_no"] ?>"> <?php echo $item["sup_company"] ?></option>
+                                        <?php endforeach  ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="img" class="form-label">Img</label>
+                                    <div class="custom-file">
+                                        <input type="file" onChange="PreviewImage(event)" class="custom-file-input" name="myfile" id="uploadImage" required>
+                                        <label class="custom-file-label" for="uploadImage">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div>
                             <img src="" id="uploadPreview" alt="" class="myImg">
@@ -72,7 +94,6 @@ $row = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="d-grid">
                             <input type="submit" name="insert" value="INSERT" class="btn btn-dark btn-block mt-3">
                         </div>
-
                     </form>
                 </div>
             </div>
