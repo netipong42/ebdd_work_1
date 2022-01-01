@@ -128,6 +128,32 @@
                         <!-- menu Dropdown -->
                         <li class="nav-item">
                             <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-key"></i>
+                                <p>
+                                    Authorize
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../../view/authorize/authorize_list.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>list</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../../view/authorize/authorize_form.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>add</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- menu Dropdown -->
+
+                        <!-- menu Dropdown -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
                                 <i class="fas fa-user nav-icon"></i>
                                 <p>
                                     Users

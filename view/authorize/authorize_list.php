@@ -2,11 +2,17 @@
 require_once("../../server/conn.php");
 
 try {
-    $slqSelect = "SELECT * FROM 
-        users as a
+    $slqSelect = "SELECT
+        u.user_no,
+        u.user_name,
+        u.user_login,
+        GROUP_CONCAT(z.module_no) AS module
+        FROM 
+        users as u
         LEFT JOIN authorize as z
-        ON z.user_no = a.user_no
-    ";
+        ON z.user_no = u.user_no
+        GROUP BY u.user_no
+        ";
     $querySelect = $conn->prepare($slqSelect);
     $querySelect->execute();
     $row = $querySelect->fetchAll(PDO::FETCH_ASSOC);
@@ -49,7 +55,7 @@ try {
                             <tr>
                                 <td> <?php echo $item["user_name"] ?> </td>
                                 <td> <?php echo $item["user_login"] ?> </td>
-                                <td> <?php echo $item["module_no"] ?> </td>
+                                <td> <?php echo $item["module"] ?> </td>
                                 <td>
                                     <a href="./authorize_edit.php?id=<?php echo $item["user_no"] ?>" class="btn btn-warning">Edit</a>
                                 </td>

@@ -1,18 +1,17 @@
 <?php
 require_once("../../server/conn.php");
 
-try {
-    $slqSelect = "SELECT * FROM authorize as z 
-        LEFT JOIN users as a
-        ON z.user_no = a.user_no
-    ";
-    $querySelect = $conn->prepare($slqSelect);
-    $querySelect->execute();
-    $row = $querySelect->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    echo $e->getMessage();
-}
+$sqlUser = "SELECT * FROM users";
+$queryUser = $conn->prepare($sqlUser);
+$queryUser->execute();
+$rowUser  = $queryUser->fetchAll(PDO::FETCH_ASSOC);
+
+$dir = "../";
+$notFolder = ["..", ".", "component", "main"];
+$folder = scandir($dir);
+$newFolder = array_diff($folder, $notFolder);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,57 +25,55 @@ try {
 <body class="hold-transition sidebar-mini layout-fixed">
     <?php require("../component/manu.php") ?>
     <!-- เนื้อหา -->
-    <div class="">
-        <div class="card">
-            <div class="card-header">
-                <h1>List Authorize</h1>
-                <a href="./authorize_form.php" class="btn btn-success my-3">Add</a>
-            </div>
-            <div class="card-body">
-                <table id="table" class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>user_name</th>
-                            <th>user_login</th>
-                            <th>module_no</th>
-                            <th>edit</th>
-                            <th>delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($row as $item) :  ?>
-                            <tr>
-                                <td> <?php echo $item["user_name"] ?> </td>
-                                <td> <?php echo $item["user_login"] ?> </td>
-                                <td> <?php echo $item["module_no"] ?> </td>
-                                <td>
-                                    <a href="./authorize_edit.php?id=<?php echo $item["user_no"] ?>" class="btn btn-warning">Edit</a>
-                                </td>
-                                <td>
-                                    <a href="../../server/authorize/authorize_delete.php?id=<?php echo $item["user_no"] ?>" class="btn btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                        <?php endforeach  ?>
-                    </tbody>
-                </table>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card card-success">
+                <div class="card-header">
+                    <h1> Authorize</h1>
+                </div>
+                <div class="card-body">
+                    <form action="../../server/authorize/authorize_insert.php" method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="user" class="form-label">User</label>
+                                    <select name="user_no" id="user" class="form-control" required>
+                                        <option value="">
+                                            ---select user---
+                                        </option>
+                                        <?php foreach ($rowUser as $item) :  ?>
+                                            <option value="<?php echo $item["user_no"] ?>">
+                                                <?php echo $item['user_name']  ?>
+                                            </option>
+                                        <?php endforeach  ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="path" class="form-label">Path</label>
+                                    <select name="module_no" id="path" class="form-control" required>
+                                        <option value="">
+                                            ---select path---
+                                        </option>
+                                        <?php foreach ($newFolder as $item) :   ?>
+                                            <option value="<?php echo $item ?>"> <?php echo $item ?></option>
+                                        <?php endforeach  ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="insert" class="btn btn-dark btn-block">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
     <!-- เนื้อหา -->
     <?php require("../component/link_footer.php") ?>
-    <script>
-        $(function() {
-            $('#table').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
-        });
-    </script>
+
 </body>
 
 </html>
