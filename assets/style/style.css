@@ -23,3 +23,11 @@ body {
   margin: 0 auto;
   margin-top: 1rem;
 }
+.image > .imgProfile {
+  width: 3.2rem;
+  height: 3.2rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  background-color: red;
+}

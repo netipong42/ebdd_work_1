@@ -55,12 +55,21 @@
             <!-- Sidebar -->
             <section class="sidebar" style="height: auto;">
                 <!-- User -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center">
                     <div class="image">
-                        <img src="../../assets/theme/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <?php if (@$_SESSION['user_no'] != "") :  ?>
+                            <img src="<?php echo "data:image/jpeg;base64," . base64_encode($_SESSION['user_img']) ?>" class="imgProfile" alt="User Image">
+                        <?php else : ?>
+                            <img src="../../assets/theme/dist/img/user2-160x160.jpg" class="imgProfile" alt="User Image">
+                        <?php endif  ?>
+
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Admin</a>
+                        <?php if (@$_SESSION['user_no'] != "") :  ?>
+                            <a href="#" class="d-block"><?php echo $_SESSION['user_name']  ?></a>
+                        <?php else : ?>
+                            <a href="../main/login.php" class="d-block">Login</a>
+                        <?php endif  ?>
                     </div>
                 </div>
                 <!-- User -->
@@ -208,7 +217,7 @@
                         <!-- หัวข้อย่อย -->
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="../../server/login/logout.php" class="nav-link">
                                 <em class="nav-icon fas fa-sign-out-alt"></em>
                                 <p>Log out</p>
                             </a>
