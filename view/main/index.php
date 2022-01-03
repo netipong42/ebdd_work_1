@@ -15,7 +15,6 @@
     <?php require("../component/manu.php") ?>
     <!-- เนื้อหา -->
     <h1>Hello Word!!!</h1>
-    <?php echo @$_SESSION['user_name']  ?>
     <!-- เนื้อหา -->
     <?php require("../component/link_footer.php") ?>
     <script>
