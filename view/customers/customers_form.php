@@ -139,12 +139,6 @@ checkModule($_SESSION["user_no"], "customers", $conn);
     <!-- เนื้อหา -->
     <?php require("../component/link_footer.php") ?>
     <script>
-        // preview
-        // function PreviewImage(event) {
-        //     var output = document.getElementById('uploadPreview');
-        //     output.src = URL.createObjectURL(event.target.files[0]);
-        // };
-
         function PreviewImage() {
             var oFReader = new FileReader();
             oFReader.readAsDataURL(document.getElementById('uploadImage').files[0]);
