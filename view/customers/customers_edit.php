@@ -1,5 +1,6 @@
 <?php
 require_once("../../server/conn.php");
+checkModule($_SESSION["user_no"], "customers", $conn);
 $data = [
     'id' => $_GET['id']
 ];

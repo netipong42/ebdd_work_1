@@ -1,6 +1,6 @@
 <?php
 require_once("../../server/conn.php");
-
+checkModule($_SESSION["user_no"], "inventory", $conn);
 try {
     $data = [
         'id' => $_GET["id"]

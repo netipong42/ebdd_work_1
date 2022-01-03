@@ -1,6 +1,6 @@
 <?php
 require_once("../../server/conn.php");
-
+checkModule($_SESSION["user_no"], "inventory", $conn);
 $sql = " SELECT * FROM suppliers";
 $query = $conn->prepare($sql);
 $query->execute();

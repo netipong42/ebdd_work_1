@@ -1,6 +1,6 @@
 <?php
 require_once("../../server/conn.php");
-
+checkModule($_SESSION["user_no"], "suppliers", $conn);
 try {
     $slqSelect = "SELECT * FROM suppliers";
     $querySelect = $conn->prepare($slqSelect);

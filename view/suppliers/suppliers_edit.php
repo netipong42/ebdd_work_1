@@ -1,6 +1,6 @@
 <?php
 require_once("../../server/conn.php");
-
+checkModule($_SESSION["user_no"], "suppliers", $conn);
 try {
     $data = ['id' => $_GET['id']];
     $slqSelect = "SELECT * FROM suppliers WHERE sup_no = :id";

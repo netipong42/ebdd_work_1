@@ -1,6 +1,6 @@
 <?php
 require_once("../../server/conn.php");
-
+checkModule($_SESSION["user_no"], "authorize", $conn);
 $data = ['id' => $_GET['id']];
 $sql = "SELECT 
         u.user_no,

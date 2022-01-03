@@ -1,6 +1,6 @@
 <?php
 require_once("../../server/conn.php");
-
+checkModule($_SESSION["user_no"], "authorize", $conn);
 $sqlUser = "SELECT * FROM users";
 $queryUser = $conn->prepare($sqlUser);
 $queryUser->execute();

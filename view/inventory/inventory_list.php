@@ -1,6 +1,6 @@
 <?php
 require_once("../../server/conn.php");
-
+checkModule($_SESSION["user_no"], "inventory", $conn);
 try {
     $slqSelect = "SELECT * FROM inventory as i
 		 LEFT JOIN suppliers as p

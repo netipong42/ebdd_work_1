@@ -1,6 +1,6 @@
 <?php
 require_once("../../server/conn.php");
-
+checkModule($_SESSION["user_no"], "authorize", $conn);
 try {
     $slqSelect = "SELECT
         u.user_no,

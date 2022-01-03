@@ -1,3 +1,7 @@
+<?php
+require_once("../../server/conn.php");
+checkModule($_SESSION["user_no"], "customers", $conn);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
