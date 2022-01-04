@@ -57,7 +57,6 @@ $rowChart = json_encode($row);
             let myData = <?php echo $rowChart ?>;
             let myDatabars = [];
             let myDataName = [];
-
             myData.forEach((res, index) => {
                 myDatabars.push([parseInt(index + 1), parseInt(res.qty_on_hand)])
                 myDataName.push([parseInt(index + 1), `${res.item_name}`])
