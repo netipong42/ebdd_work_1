@@ -1,10 +1,26 @@
 <?php
 require_once("../../server/conn.php");
-$sql = "SELECT i.item_no ,i.qty_on_hand , i.item_name  FROM inventory AS i ORDER BY qty_on_hand DESC";
-$query = $conn->prepare($sql);
-$query->execute();
-$row = $query->fetchAll();
-$rowChart = json_encode($row);
+
+// Bar
+$sqlBar = "SELECT i.item_no ,i.qty_on_hand , i.item_name  FROM inventory AS i ORDER BY qty_on_hand DESC";
+$queryBar = $conn->prepare($sqlBar);
+$queryBar->execute();
+$rowBar = $queryBar->fetchAll();
+$rowChartBar = json_encode($rowBar);
+
+// Donut
+$sqlDonut = "SELECT 
+            SUM(i.qty_on_hand) AS sum ,
+            s.sup_company
+            FROM inventory AS i
+            INNER JOIN suppliers AS s 
+            ON i.sup_no = s.sup_no
+            GROUP BY s.sup_no
+            ";
+$queryDonut = $conn->prepare($sqlDonut);
+$queryDonut->execute();
+$rowDonut = $queryDonut->fetchAll();
+$rowChartDonut = json_encode($rowDonut);
 ?>
 
 <!DOCTYPE html>
@@ -78,15 +94,15 @@ $rowChart = json_encode($row);
     <script src="../../assets/theme/plugins/flot/plugins/jquery.flot.pie.js"></script>
     <script>
         function barChart() {
-            let myData = <?php echo $rowChart ?>;
-            let myDatabars = [];
-            let myDataName = [];
-            myData.forEach((res, index) => {
-                myDatabars.push([parseInt(index + 1), parseInt(res.qty_on_hand)])
-                myDataName.push([parseInt(index + 1), `${res.item_name}`])
-            })
+            let dataBar = <?php echo $rowChartBar ?>;
+            let numBar = dataBar.map((res, index) => (
+                [index, parseInt(res.qty_on_hand)]
+            ));
+            let nameBar = dataBar.map((res, index) => (
+                [index, res.item_name]
+            ));
             var bar_data = {
-                data: myDatabars,
+                data: numBar,
                 bars: {
                     show: true
                 }
@@ -106,29 +122,19 @@ $rowChart = json_encode($row);
                 },
                 colors: ['#1d1d1d'],
                 xaxis: {
-                    ticks: myDataName,
+                    ticks: nameBar,
                 }
             })
         }
 
         function donutChart() {
-            var donutData = [{
-                    label: 'Series2',
-                    data: 30,
-                    color: '#3c8dbc'
-                },
-                {
-                    label: 'Series3',
-                    data: 20,
-                    color: '#0073b7'
-                },
-                {
-                    label: 'Series4',
-                    data: 50,
-                    color: '#00c0ef'
-                }
-            ];
-            $.plot('#donut-chart', donutData, {
+            let dataDonut = <?php echo $rowChartDonut ?>;
+            let Data = dataDonut.map((res) => ({
+                'label': res.sup_company,
+                'data': parseInt(res.sum),
+                'color': '#1d1d1d'
+            }));
+            $.plot('#donut-chart', Data, {
                 series: {
                     pie: {
                         show: true,
