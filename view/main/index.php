@@ -3,7 +3,7 @@ require_once("../../server/conn.php");
 $sql = "SELECT i.item_no ,i.qty_on_hand , i.item_name  FROM inventory AS i ORDER BY qty_on_hand DESC";
 $query = $conn->prepare($sql);
 $query->execute();
-$row = $query->fetchAll(PDO::FETCH_ASSOC);
+$row = $query->fetchAll();
 $rowChart = json_encode($row);
 ?>
 
@@ -23,6 +23,9 @@ $rowChart = json_encode($row);
     <h1>Hello Word!!!</h1>
     <!-- BAR CHART -->
     <div class="row">
+
+        <?php show($row)  ?>
+
         <div class="col-md-6">
             <div class="card card-primary card-outline">
                 <div class="card-header">
