@@ -2,7 +2,8 @@
 require_once("../../server/conn.php");
 
 // Bar
-$sqlBar = "SELECT i.item_no ,i.qty_on_hand , i.item_name  FROM inventory AS i ORDER BY qty_on_hand DESC";
+$sqlBar = "SELECT i.item_no ,i.qty_on_hand , i.item_name  
+          FROM inventory AS i ORDER BY qty_on_hand DESC";
 $queryBar = $conn->prepare($sqlBar);
 $queryBar->execute();
 $rowBar = $queryBar->fetchAll();
@@ -10,7 +11,7 @@ $rowChartBar = json_encode($rowBar);
 
 // Donut
 $sqlDonut = "SELECT 
-            SUM(i.qty_on_hand) AS sum ,
+            SUM(i.qty_on_hand) AS sum,
             s.sup_company
             FROM inventory AS i
             INNER JOIN suppliers AS s 
@@ -61,7 +62,6 @@ $rowChartDonut = json_encode($rowDonut);
             </div>
         </div>
         <div class="col-md-6">
-            <!-- Donut chart -->
             <div class="card card-primary card-outline">
                 <div class="card-header">
                     <h3 class="card-title">
@@ -81,7 +81,6 @@ $rowChartDonut = json_encode($rowDonut);
                 <div class="card-body">
                     <div id="donut-chart" style="height: 300px;"></div>
                 </div>
-                <!-- /.card-body-->
             </div>
         </div>
     </div>
