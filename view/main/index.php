@@ -132,7 +132,7 @@ $rowChartDonut = json_encode($rowDonut);
             let Data = dataDonut.map((res) => ({
                 'label': res.sup_company,
                 'data': parseInt(res.sum),
-                'color': '#1d1d1d'
+                'color': randomColor()
             }));
             $.plot('#donut-chart', Data, {
                 series: {
@@ -160,6 +160,15 @@ $rowChartDonut = json_encode($rowDonut);
                 label +
                 '<br>' +
                 Math.round(series.percent) + '%</div>'
+        }
+
+        function randomColor() {
+            let color = Math.floor(Math.random() * 16777215).toString(16);
+            if (color != "#ffffff" && color.length == 6) {
+                return "#" + color;
+            } else {
+                return this.randomColor();
+            }
         }
         barChart();
         donutChart();
