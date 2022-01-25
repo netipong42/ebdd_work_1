@@ -75,7 +75,7 @@ try {
                                     <div class="d-flex">
                                         <a href="./customers_edit.php?id=<?php echo $item['cust_no'] ?>" class="btn btn-warning mx-1">Edit</a>
                                         <a onClick="confirmAlert('<?php echo $item["cust_no"] ?>')" class="btn btn-danger mx-1">Delete</a>
-                                        <a class="btn btn-info mx-1" href="./custoerts_pdf.php?id=<?php echo $item["cust_no"] ?>">PDF</a>
+                                        <a class="btn btn-info mx-1" href="./customers_pdf.php?id=<?php echo $item["cust_no"] ?>">PDF</a>
                                     </div>
                                 </td>
 
