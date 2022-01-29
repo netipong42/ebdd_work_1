@@ -1,8 +1,6 @@
 <?php
 require_once("../../server/conn.php");
 require_once __DIR__ . '../../../vendor/autoload.php';
-
-
 // PDF
 $defaultConfig = (new Mpdf\Config\ConfigVariables())->getDefaults();
 $fontDirs = $defaultConfig['fontDir'];
